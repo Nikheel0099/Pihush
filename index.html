@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="slider-container">
+      <div class="slider-images">
+        <div class="slider-img">
+          <img src="Images/n1.jpg" alt="1" />
+          <h1>API</h1>
+          <div class="details">
+            <h2></h2>
+            <p>You're the API to my heart</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/n10.jpg" alt="2" />
+          <h1>Love</h1>
+          <div class="details">
+            <h2></h2>
+            <p>Coding is a journey, not a destination</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/n3.jpg" alt="3" />
+          <h1>Async</h1>
+          <div class="details">
+            <h2></h2>
+            <p>I'm async in Love</p>
+          </div>
+        </div>
+        <div class="slider-img active">
+          <img src="Images/n4.jpg" alt="4" />
+          <h1>Compiler</h1>
+          <div class="details">
+            <h2></h2>
+            <p>You're compiler to my code</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/n5.jpg" alt="5" />
+          <h1>Typecast</h1>
+          <div class="details">
+            <h2></h2>
+            <p>We can always typecast if you're not my type</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/n8.jpg" alt="6" />
+          <h1>CSS</h1>
+          <div class="details">
+            <h2></h2>
+            <p>You're css to my html</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/n9.jpg" alt="7" />
+          <h1>Pinned</h1>
+          <div class="details">
+            <h2></h2>
+            <p>You're pinned in my mind</p>
+          </div>
+        </div>
+      
+      
+      </div>
+
+    </section>
+    <script src="js/jQuery.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".slider-img").on("click", function () {
+          $(".slider-img").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
