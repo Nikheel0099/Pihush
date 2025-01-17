@@ -4,8 +4,9 @@ var rotateSpeed = -60;
 var imgWidth = 120; 
 var imgHeight = 170; 
 
-var bgMusicURL = 'https://www.dropbox.com/scl/fi/s2yqv0idr54vv4762roze/besti.mp3?rlkey=om9mmpxagbmiuruuldgtlqpte&st=ughsxfij&dl=0';
-var bgMusicControls = true; 
+// Old music URL removed and new button music URL added.
+var bgMusicURL = 'https://www.dropbox.com/scl/fi/s2yqv0idr54vv4762roze/besti.mp3?rlkey=om9mmpxagbmiuruuldgtlqpte&st=ughsxfij&dl=1';
+var bgMusicControls = true;
 
 setTimeout(init, 1000);
 
@@ -14,7 +15,6 @@ var ospin = document.getElementById('spin-container');
 var aImg = ospin.getElementsByTagName('img');
 var aVid = ospin.getElementsByTagName('video');
 var aEle = [...aImg, ...aVid];
-
 
 ospin.style.width = imgWidth + "px";
 ospin.style.height = imgHeight + "px";
@@ -32,7 +32,6 @@ function init(delayTime) {
 }
 
 function applyTranform(obj) {
- 
   if(tY > 180) tY = 180;
   if(tY < 0) tY = 0;
 
@@ -53,13 +52,17 @@ if (autoRotate) {
   ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
 }
 
-if (bgMusicURL) {
-  document.getElementById('music-container').innerHTML += `
-<audio src="${bgMusicURL}" ${bgMusicControls? 'controls': ''} autoplay loop>    
-<p>If you are reading this, it is because your browser does not support the audio element.</p>
-</audio>
-`;
-}
+// Replacing old music with new button-based play functionality.
+document.getElementById('musicBtn').addEventListener('click', function() {
+    var audio = new Audio(bgMusicURL);
+    audio.controls = bgMusicControls;
+    audio.play();  // Play music on button click
+    document.getElementById('music-container').innerHTML = `
+      <audio src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''} autoplay loop>    
+        <p>If you are reading this, it is because your browser does not support the audio element.</p>
+      </audio>
+    `;
+});
 
 document.onpointerdown = function (e) {
   clearInterval(odrag.timer);
