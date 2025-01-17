@@ -4,7 +4,7 @@ var rotateSpeed = -60;
 var imgWidth = 120; 
 var imgHeight = 170; 
 
-var bgMusicURL = 'https://user-images.githubusercontent.com/151072490/283747943-7b08424b-8647-4bdc-996c-965063dbb5e3.mp4';
+var bgMusicURL = 'https://drive.google.com/file/d/1COM4p5TMRh-rp7irPZHtweQugTfCwnu-/view?usp=drivesdk';
 var bgMusicControls = true; 
 
 setTimeout(init, 1000);
